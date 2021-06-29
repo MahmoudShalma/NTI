@@ -1,0 +1,29 @@
+{{>header}}
+{{>nav}}
+<section>
+    <h3 class="text-center" style="margin-top: 30px; margin-bottom:0px">
+        All Customers 
+    </h3>
+    <div class="container">
+        <div class="row" style="margin-top: 30px;margin-bottom:30px">
+            {{#if cus.length}}
+            {{#each cus}}
+            <div class="col-3">
+                <div class="border border-3 rounded border-primary" style="margin: 10px 5px; padding:20px">
+                    <h4>Name: {{this.name}}</h4>
+                    <h5>Balance: {{this.balance}}</h5>
+                    <br>
+                    <a href="/allCus/{{@index}}" class="btn btn-primary btn-sm">More..</a>
+                    <a href="/deleteCus" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <div class="text-center alert alert-danger">
+                <h3>no Customers Found</h3>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</section>
+{{>footer}}

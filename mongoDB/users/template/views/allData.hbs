@@ -1,0 +1,34 @@
+{{>header}}
+{{>nav}}
+
+<table class="table">
+  <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Msg</th>
+        <th scope="col">Actions</th> 
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+        
+      <td scope="row">{{this._id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.msg}}</td>
+        <td>
+            <a href="/showAll/{{this._id}}" class="btn btn-primary btn-sm">Show</a>
+            <a href="/deleteUser/{{this._id}}" class="btn btn-danger btn-sm">Delete</a>
+            <a href="/editUser/{{this._id}}" class="btn btn-warning btn-sm">Edit</a>
+
+        </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{>footer}}
